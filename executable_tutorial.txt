@@ -1,0 +1,19 @@
+I. Create executable
+https://www.zacoding.com/en/post/python-selenium-to-exe/
+https://stackoverflow.com/questions/49853252/create-a-python-executable-with-chromedriver-selenium
+
+1) cmd-be: pyinstaller --onefile --noconsole shio_claimtracker_calc_v32.py --> létrejön a dist mappa és abban az exe
+2) copy chromedriver and necessary files (images, data, etc.) to dist vagy máshova
+3) edit spec file: binaries=[('./chromedriver.exe', '.')] -- ha dist mappában van így hivatkozunk rá [(driver path, destination path)]
+4) pyinstaller --onefile --noconsole --windowed shio_claimtracker_calc_v32.spec --> létrejön a jó exe
+
+II. Hide chromedriver console when running exe
+https://stackoverflow.com/questions/33983860/hide-chromedriver-console-in-python
+
+1) from win32process import CREATE_NO_WINDOW
+2) creationflags=CREATE_NO_WINDOW
+
+"C:\Users\Roland\Anaconda3\Lib\site-packages\selenium\webdriver\common\service.py"
+
+"C:\Users\Roland\Anaconda3\Lib\site-packages\selenium\webdriver\chrome\service.py"
+"C:\Users\Roland\Anaconda3\Lib\site-packages\webdriver_manager\chrome.py"
